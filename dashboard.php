@@ -99,6 +99,7 @@ $reqs = $conn->query('SELECT r.*, dt.title FROM requests r JOIN document_types d
                             <th>Document Type</th>
                             <th>Appointment Schedule</th>
                             <th>Current Status</th>
+                            <th>Admin Notes</th>
                             <th>Document Copy</th>
                         </tr>
                     </thead>
@@ -128,6 +129,15 @@ $reqs = $conn->query('SELECT r.*, dt.title FROM requests r JOIN document_types d
                                 ?>">
                                     <?=ucfirst($r['status'])?>
                                 </span>
+                            </td>
+                            <td>
+                                <?php if(!empty($r['admin_notes'])): ?>
+                                    <div class="admin-notes">
+                                        <div class="notes-content"><?=nl2br(htmlspecialchars($r['admin_notes']))?></div>
+                                    </div>
+                                <?php else: ?>
+                                    <span class="text-secondary">No notes</span>
+                                <?php endif; ?>
                             </td>
                             <td>
                                 <?php if($r['softcopy_filename']): ?>

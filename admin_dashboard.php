@@ -72,7 +72,8 @@ $requests = $conn->query('SELECT r.*, u.full_name, dt.title FROM requests r JOIN
                 $statsQueries = [
                     'users' => "SELECT COUNT(*) as count FROM users",
                     'pending' => "SELECT COUNT(*) as count FROM requests WHERE status='pending'",
-                    'completed' => "SELECT COUNT(*) as count FROM requests WHERE status='approved'"
+                    'completed' => "SELECT COUNT(*) as count FROM requests WHERE status='approved'",
+                    'rejected' => "SELECT COUNT(*) as count FROM requests WHERE status='rejected'"
                 ];
                 
                 $stats = [];
@@ -102,6 +103,11 @@ $requests = $conn->query('SELECT r.*, u.full_name, dt.title FROM requests r JOIN
                 <div class="stat-title">Completed Requests</div>
                 <div class="stat-value"><?php echo number_format($stats['completed']); ?></div>
                 <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Rejected Requests</div>
+                <div class="stat-value"><?php echo number_format($stats['rejected']); ?></div>
+                <div class="stat-icon"><i class="fas fa-times-circle"></i></div>
             </div>
         </div>
 
