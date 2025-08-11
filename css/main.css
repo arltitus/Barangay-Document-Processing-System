@@ -1,0 +1,17 @@
+/* Main Stylesheet */
+
+/* Base Styles */
+@import url('base/variables.css');
+@import url('base/reset.css');
+
+/* Components */
+@import url('components/buttons.css');
+@import url('components/forms.css');
+@import url('components/cards.css');
+@import url('components/tables.css');
+@import url('components/alerts.css');
+@import url('components/navigation.css');
+@import url('components/loading.css');
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');

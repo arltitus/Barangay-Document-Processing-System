@@ -1,0 +1,98 @@
+/* Form Components */
+.form-group {
+    margin-bottom: var(--spacing-4);
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-2);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: var(--spacing-4);
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+.input-group .form-control {
+    padding-left: calc(var(--spacing-4) * 2 + 20px);
+}
+
+.password-toggle {
+    position: absolute;
+    right: var(--spacing-4);
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.form-error {
+    color: var(--danger-color);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-1);
+}
+
+/* File Upload */
+.file-upload {
+    padding: 0.5rem;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-sm);
+    background-color: var(--background-color);
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.file-upload:hover {
+    border-color: var(--primary-color);
+}
+
+.file-info {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-top: var(--spacing-2);
+}
+
+/* Mobile Improvements */
+@media (max-width: 768px) {
+    .form-control {
+        font-size: 16px;
+        padding: var(--spacing-4);
+    }
+
+    input[type="date"].form-control,
+    input[type="time"].form-control {
+        min-height: 44px;
+    }
+}

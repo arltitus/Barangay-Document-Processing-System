@@ -1,0 +1,5 @@
+ALTER TABLE users
+ADD COLUMN failed_login_attempts INT DEFAULT 0,
+ADD COLUMN locked_until DATETIME NULL,
+ADD COLUMN session_id VARCHAR(255) NULL,
+ADD COLUMN last_login DATETIME NULL;

@@ -1,0 +1,87 @@
+/* Admin dashboard specific styles */
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.user-management {
+    margin-bottom: 2rem;
+}
+
+.user-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.user-table th,
+.user-table td {
+    white-space: nowrap;
+}
+
+.user-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.verification-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.verified {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.document-requests {
+    margin-top: 2rem;
+}
+
+.request-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.document-upload {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.upload-preview {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+@media (max-width: 768px) {
+    .user-actions, .document-upload {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .filter-group {
+        flex-basis: 100%;
+    }
+}

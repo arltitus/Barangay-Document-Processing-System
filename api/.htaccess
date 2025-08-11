@@ -1,0 +1,26 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Protect against directory listing
+Options -Indexes
+
+# Only allow GET and POST requests (and OPTIONS for CORS)
+<LimitExcept GET POST OPTIONS>
+    Deny from all
+</LimitExcept>
+
+# Security headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "DENY"
+Header set X-XSS-Protection "1; mode=block"
+Header set Content-Security-Policy "default-src 'self'"
+
+# CORS headers for API
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-API-Key"
+
+# Remove server signature
+ServerSignature Off
